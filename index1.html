@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .homepage-main-container{
+            display: flex;
+            flex-direction: row;
+        }
+        .game-select-container{
+            flex: 1;
+            margin: 0.5%;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            border-radius: 10px 10px 10px 10px;
+            align-self: flex-start;
+            background: rgba(211, 239, 255, 0.618);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+        }
+        .game-cards{
+            max-height: fit-content;
+
+        }
+        
+        .privacy-select-button{
+            height: fit-content;
+            display: flex;
+            flex-direction: row;
+        }
+        .private-room-button{
+            flex: 1;
+        }
+        .public-room-button{
+            flex: 1;
+        }
+        .room-create-button{
+            height: fit-content;
+            width: 100%;
+            padding: 5px;
+        }
+        
+        .logo-rooms-container{
+            flex: 4;
+            display: flex;
+            flex-direction: column;
+            padding-left: 3%;
+        }
+        
+        .welcome-logo{
+            align-self: center;
+        }
+        .rooms-container{
+            flex: auto;
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 1%;
+            column-gap: 2%;
+            justify-content: flex-start;
+            margin: 1%;
+            padding: 2%;
+            border-radius: 10px 10px 10px 10px;
+            background: rgba(211, 239, 255, 0.618);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            
+        
+        }
+        .flex-item{
+            flex: 1 0 100px;
+
+            height: fit-content;
+            border-width: 1px;
+           
+            padding: 2%;
+            margin: 1%;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .login-info-container{
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            padding-right: 1%;
+        }
+        .login-container{
+            display: flex;
+            flex-direction: column;
+            row-gap: 2%;
+            padding: 10%;
+            border-radius: 10px 10px 10px 10px;
+            background: rgba(211, 239, 255, 0.618);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            
+            
+
+        }
+        .authentication-platform-buttons{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            column-gap: 20%;
+        }
+        .authentication-button{
+            max-width: 50px;
+            flex: content;
+        }
+       
+        .login-guest-image{
+            width: 25%;
+            align-self: center;
+        }
+        .info-card{
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            padding: 10%;
+            border-radius: 10px 10px 10px 10px;
+            background: rgba(211, 239, 255, 0.618);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            
+
+        }
+        .info-links-container{
+            display: flex;
+            flex-direction: column;
+            row-gap: 5px;
+            
+        }
+
+        .container-heading{
+            height: fit-content;
+            padding: 5px;
+            font-weight: bolder;
+            align-self: center;
+        }
+    </style>
+</head>
+<body style="background: rgb(193, 237, 245);">
+    <div class="homepage-main-container">
+        <div class="game-select-container">
+            <div class="container-heading">
+                GAME SELECT
+            </div>
+            <div class="game-cards">
+                <div class="game-thumbnail hangman">
+                    <a href="hangman.html">
+                        <img style="width: 100%; border-radius: 10px 10px 10px 10px; " src="img/hangman.svg" alt="hangman">
+                    </a>
+                </div>
+                <div class="game-thumbnail team-uttt">
+                    <img style="width: 100%; border-radius: 10px 10px 10px 10px; "   src="img/utt-thumbnail.svg" alt="team tictactoe">
+                </div>
+                <div class="game-thumbnail uttt">
+                    <img style="width: 100%; border-radius: 10px 10px 10px 10px; "  src="img/tic-tac-toe.svg" alt="">
+                </div>
+            </div>
+            <div class="privacy-select-button">
+                <button class="private-room-button">🔐</button>
+                <button class="public-room-button">🌐</button>
+            </div>
+            <button class="room-create-button">CREATE</button>
+
+        </div>
+        <div class="logo-rooms-container">
+            <div class="welcome-logo">
+                <img style="width: 400px;" src="img/welcome.svg" alt="welcome logo">
+            </div>
+            <div class="rooms-container">    
+                <!-- <div class="flex-item">room 1</div>
+                <div class="flex-item">room 2</div> -->   
+            </div>
+
+        </div>
+        <div class="login-info-container">
+            <div class="login-container">
+                <div class="container-heading">
+                    LOGIN
+                </div>
+                <img class="login-guest-image" src="img/guest-pfp.svg" alt="">
+                <input class="username-homepage" type="text" placeholder="username">
+
+                <div class="authentication-platform-buttons">
+                    <img class="authentication-button" src="img/discord-logo.svg" alt="discord">
+                    <img class="authentication-button" src="img/twitch-logo.svg" alt="twitch">
+                </div>
+            </div>
+            <div class="info-card">
+                <div class="container-heading">
+                    INFO
+                </div>
+                <div class="info-links-container">
+                    <div class="info-links">
+                        How to play
+                    </div>
+                    <div class="info-links">
+                        FAQ
+                    </div>
+                    <div class="info-links">
+                        Terms of service
+                    </div>
+                    <div class="info-links">
+                        Contact us
+                    </div>
+                    <div class="info-links">
+                        nyah-nyah-nyah
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</body>
+<script>
+    function addRoomCards(){
+        const roomContainer = document.querySelector(".rooms-container");
+        for (let i = 0; i < 35; i++) {
+            const roomCard = document.createElement('div');
+            roomCard.className = "flex-item";
+            roomCard.textContent = "Room "+i;
+            roomContainer.appendChild(roomCard);
+        }        
+    };
+    addRoomCards();
+</script>
+</html>

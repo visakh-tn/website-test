@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .gamepage-hangman{
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            
+        }
+        .head-banner{
+            flex: 0 1 auto;
+            padding: 2px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            background-color: rgb(164, 209, 244);
+        }
+
+        .room-name{
+            margin-right: auto;
+            margin-left: auto;
+            align-self: center;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bolder;
+
+        }
+        .leave-button{
+            background: rgb(249, 189, 149);
+            border: none;
+            padding: 1%;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .volume-container{
+            display: flex;
+            flex-direction: row;
+            width: fit-content;
+            padding: 0.5%;
+            align-self: center;
+        }
+        .mute-button{
+            padding: 1%;
+            align-self: center;
+            background: none;
+            border: none;
+            
+        }
+        .chatbox-toggle{
+            padding: 0.5%;
+            align-self: center;
+        }
+        .game-chat-container{
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: row;
+            background-color: rgb(214, 236, 241);
+
+        }
+        .game-container{
+            flex: 1;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .players-card-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            row-gap: 1%;
+            column-gap: 1%;
+            justify-content: center;
+        }
+        .players-card{
+            flex: 1 0 auto;
+            min-width: 6vw;
+            max-width: 8vw; 
+            margin: 1%;  
+            border: black;
+            border-width: 2px;
+            border-style: solid;  
+            border-radius: 10px;  
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.552);
+        
+        }
+        .player-image{
+            flex: 0 1 auto;
+            width: 6vw;
+            /* min-width: 10px; */
+        }
+        
+        .prompt-contianer{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 4vh;
+            font-weight: bolder;
+            padding: 2%;
+            text-align: center;
+            color: aliceblue;
+            background: #000;
+            margin-top: auto;
+
+
+        }
+        .player-input-container{
+            text-align: center;
+            padding: 1%;
+        }
+        .player-input{
+            padding: 1%;
+            justify-content: center;
+
+        }
+
+        .chat-container{
+            display: flex;
+            flex-direction: column;
+            background-color: aquamarine;
+        }
+        .message-container{
+            flex: 5;
+            background: #2a2626;
+        }
+        .chat-input{
+            padding: 2%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="gamepage-hangman">
+        <div class="head-banner">
+            <!-- <button class="home-button">HOME</button> -->
+            <div class="room-name">
+                room name
+            </div>
+            <button class="leave-button">🚪🚶‍♂️</button>                 
+            <div class="volume-container">
+                <button class="mute-button" type="radio">🔇</button>
+                <input class="volume-slider" type="range" min="1" max="100" value="50" >
+            </div>   
+            <button class="chatbox-toggle" type="radio">🗨️</button>
+        </div>
+        <div class="game-chat-container">
+            <div class="game-container">
+                <div class="players-card-container">
+                    <!-- <div class="players-card">
+                        <img class="player-image" src="img/guest-pfp.svg" alt="image">
+                        <div class="player-card-button">
+                            🟢
+                        </div>
+                    </div>
+                    
+                    <div class="players-card">
+                        <img class="player-image" src="img/guest-pfp.svg" alt="image">
+                        <div class="player-card-button">
+                            🟢
+                        </div>
+                    </div> -->
+                </div>
+                <div class="prompt-contianer">
+                    R_XLA_D
+                </div>
+                <div class="player-input-container">
+                    <input class="player-input" type="text" placeholder="Enter you guess here">
+                </div>
+                
+            </div>
+            <div class="chat-container">
+                <div class="message-container">
+                </div>
+                <input class="chat-input" type="text" placeholder="type here to chat....">
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+<script>
+function addplayers(){
+const container = document.querySelector('.players-card-container');
+
+for (let i = 1; i <= 20; i++) {
+console.log("adding new card, ",i,"\n")
+const playerCard = document.createElement('div');
+playerCard.className = 'players-card';
+
+const playerImage = document.createElement('img');
+playerImage.className = 'player-image';
+playerImage.src = 'img/guest-pfp.svg';
+playerImage.alt = 'image';
+
+const playerButton = document.createElement('div');
+playerButton.className = 'player-card-button';
+playerButton.textContent = '🟢';
+
+playerCard.appendChild(playerImage);
+playerCard.appendChild(playerButton);
+
+container.appendChild(playerCard);
+}};
+addplayers();
+</script>
+</html>
